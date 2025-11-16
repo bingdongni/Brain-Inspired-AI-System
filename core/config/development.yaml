@@ -1,0 +1,429 @@
+# Brain-Inspired AI 开发环境配置
+# ===================================
+
+# 系统配置
+system:
+  # 计算设备
+  device: "auto"  # auto会自动选择可用设备
+  device_id: 0
+  num_workers: 2  # 开发环境使用较少的worker
+  
+  # 性能配置
+  batch_size: 16  # 较小的批次大小
+  max_sequence_length: 256
+  
+  # 日志配置
+  logging:
+    level: "DEBUG"  # 详细日志
+    format: "%(asctime)s | %(levelname)-8s | %(name)s | %(funcName)s:%(lineno)d | %(message)s"
+    file: "logs/brain_ai_dev.log"
+    max_size: "50MB"
+    backup_count: 3
+  
+  # 内存配置
+  memory:
+    max_cache_size: "512MB"  # 较小的缓存
+    cleanup_interval: 1800  # 30分钟
+  
+  # 安全配置（开发环境宽松）
+  security:
+    max_requests_per_minute: 10000
+    rate_limit_window: 60
+    allowed_origins: ["*", "http://localhost:3000", "http://127.0.0.1:3000"]
+
+# 模型配置
+model:
+  # 默认模型类型
+  default_type: "brain_system"
+  
+  # 模型路径
+  model_dir: "models"
+  checkpoint_dir: "checkpoints"
+  
+  # 模型保存配置（更频繁保存）
+  save_frequency: 5  # 每个5个epoch保存一次
+  keep_checkpoints: 3
+  
+  # 模型推理配置
+  inference:
+    batch_size: 16
+    max_tokens: 256
+    timeout: 60  # 较长的超时时间
+
+# 海马体配置
+hippocampus:
+  # 网络参数（较小模型）
+  ca3_hidden_size: 256
+  ca3_num_layers: 2
+  ca1_hidden_size: 256
+  dg_hidden_size: 128
+  
+  # 记忆参数（较小的记忆容量）
+  memory_capacity: 10000
+  max_sequence_length: 256
+  retrieval_threshold: 0.6  # 较低的阈值，便于测试
+  
+  # 学习参数
+  fast_learning_rate: 0.1
+  slow_learning_rate: 0.01
+  consolidation_threshold: 0.7
+  
+  # 注意力机制
+  attention_dim: 64
+  num_attention_heads: 4
+
+# 新皮层配置
+neocortex:
+  # 层次化参数（较小模型）
+  num_layers: 3
+  hidden_size: 256
+  dropout: 0.1
+  
+  # 注意力配置
+  attention_heads: 4
+  attention_dim: 256
+  
+  # 激活函数
+  activation: "relu"  # 使用ReLU便于调试
+  
+  # 正则化
+  layer_norm_eps: 1e-5
+  
+  # 处理模块
+  processing_modules:
+    prediction_enabled: true
+    attention_enabled: true
+    decision_enabled: true
+    crossmodal_enabled: false  # 开发环境禁用跨模态处理
+
+# 持续学习配置
+lifelong_learning:
+  # EWC配置
+  ewc:
+    lambda_ewc: 100
+    fisher_update_frequency: 50
+  
+  # 生成式重放配置
+  generative_replay:
+    enabled: false  # 开发环境禁用
+    generator_lr: 0.01
+    replay_ratio: 0.3
+  
+  # 动态扩展配置
+  dynamic_expansion:
+    enabled: false  # 开发环境禁用
+    growth_threshold: 0.2
+    max_new_neurons: 50
+  
+  # 知识转移配置
+  knowledge_transfer:
+    enabled: false  # 开发环境禁用
+    temperature: 4.0
+    alpha: 0.7
+
+# 动态路由配置
+dynamic_routing:
+  # 路由控制器
+  controller:
+    enabled: false  # 开发环境禁用
+    update_frequency: 20
+    
+  # 自适应分配
+  adaptive_allocation:
+    enabled: false
+    load_balance_threshold: 0.9
+    early_exit_threshold: 0.98
+  
+  # 效率优化
+  efficiency_optimization:
+    enabled: false
+    power_optimization: false
+    path_selection: "random"
+  
+  # 强化学习路由
+  reinforcement_routing:
+    enabled: false
+    learning_rate: 0.1
+    exploration_rate: 0.2
+
+# 训练配置
+training:
+  # 基本参数
+  epochs: 50  # 较少的训练轮数
+  batch_size: 16
+  learning_rate: 0.001
+  
+  # 优化器
+  optimizer: "adam"
+  beta1: 0.9
+  beta2: 0.999
+  eps: 1e-8
+  
+  # 学习率调度
+  scheduler: "cosine"
+  scheduler_params:
+    T_max: 50
+    eta_min: 1e-6
+  
+  # 早停
+  early_stopping:
+    enabled: true
+    patience: 10  # 较少的耐心值
+    min_delta: 0.001
+    monitor_metric: "val_loss"
+    mode: "min"
+  
+  # 梯度裁剪
+  gradient_clipping:
+    enabled: true
+    max_norm: 1.0
+  
+  # 混合精度
+  mixed_precision:
+    enabled: false  # 开发环境禁用混合精度便于调试
+
+# 数据配置
+data:
+  # 数据路径
+  data_dir: "data"
+  dataset_cache_dir: "cache"
+  
+  # 数据加载
+  num_workers: 2
+  pin_memory: false  # 开发环境不使用pin_memory
+  persistent_workers: false
+  
+  # 数据预处理
+  preprocessing:
+    normalize: true
+    augmentation: true  # 开发环境启用数据增强
+    
+    # 图像预处理
+    image:
+      target_size: [224, 224]
+      resize_mode: "resize"
+      normalize_mean: [0.485, 0.456, 0.406]
+      normalize_std: [0.229, 0.224, 0.225]
+    
+    # 文本预处理
+    text:
+      max_length: 256  # 较短的序列
+      tokenizer: "bert-base-uncased"
+    
+    # 音频预处理
+    audio:
+      sample_rate: 16000
+      max_duration: 10.0  # 较短的音频
+
+# 服务器配置
+server:
+  # HTTP服务器
+  http:
+    host: "127.0.0.1"  # 仅本地访问
+    port: 8000
+    workers: 1  # 单worker便于调试
+    worker_class: "uvicorn.workers.UvicornWorker"
+    worker_connections: 100
+    max_requests: 1000
+    max_requests_jitter: 100
+    timeout: 60  # 较长的超时
+    keepalive: 5
+  
+  # WebSocket配置
+  websocket:
+    max_connections: 100
+    heartbeat_interval: 60
+    message_size_limit: "5MB"
+  
+  # SSL配置
+  ssl:
+    enabled: false
+  
+  # CORS配置
+  cors:
+    enabled: true
+    allow_origins: ["*", "http://localhost:3000", "http://127.0.0.1:3000"]
+    allow_credentials: true
+    allow_methods: ["*"]
+    allow_headers: ["*"]
+
+# 监控配置
+monitoring:
+  # 指标收集
+  metrics:
+    enabled: true
+    collection_interval: 30  # 较长的收集间隔
+    retention_period: "1d"
+    
+    # 指标端点
+    prometheus:
+      enabled: false
+    
+  # 健康检查
+  health_check:
+    enabled: true
+    interval: 60  # 较长的检查间隔
+    timeout: 10
+    endpoints: ["/health"]
+  
+  # 性能分析
+  profiling:
+    enabled: true  # 开发环境启用性能分析
+    profile_slow_requests: false
+    profile_threshold: 2.0
+  
+  # 日志聚合
+  logging:
+    enabled: true
+    level: "DEBUG"
+    format: "text"  # 文本格式便于阅读
+    
+    # ELK Stack配置
+    elasticsearch:
+      enabled: false
+    
+    # Grafana配置
+    grafana:
+      enabled: false
+
+# 数据库配置
+database:
+  # 主数据库（使用SQLite便于开发）
+  primary:
+    type: "sqlite"
+    database: "brain_ai_dev.db"
+    pool_size: 5
+    max_overflow: 10
+    echo: true  # 显示SQL语句
+  
+  # 缓存数据库
+  cache:
+    type: "redis"
+    host: "localhost"
+    port: 6379
+    db: 0
+    password: null
+    pool_size: 5
+    
+  # 时序数据库（禁用）
+  metrics:
+    enabled: false
+
+# 缓存配置
+cache:
+  # 内存缓存
+  memory:
+    enabled: true
+    max_size: "256MB"
+    ttl: 1800  # 30分钟
+  
+  # Redis缓存
+  redis:
+    enabled: true
+    host: "localhost"
+    port: 6379
+    db: 1
+    password: null
+    pool_size: 5
+    
+  # 分布式缓存（禁用）
+  distributed:
+    enabled: false
+
+# 队列配置
+queue:
+  # 任务队列（禁用）
+  celery:
+    enabled: false
+  
+  # 消息队列（禁用）
+  rabbitmq:
+    enabled: false
+
+# 安全配置（开发环境宽松）
+security:
+  # 认证
+  authentication:
+    enabled: false  # 开发环境禁用认证
+    method: "jwt"
+    secret_key: "dev-secret-key-change-in-production"
+    access_token_expire_minutes: 60
+    refresh_token_expire_days: 30
+  
+  # 授权（禁用）
+  authorization:
+    enabled: false
+  
+  # 加密
+  encryption:
+    algorithm: "AES-256-GCM"
+    key_rotation_interval: 86400
+  
+  # 安全头
+  security_headers:
+    enabled: false
+
+# API配置
+api:
+  # 版本控制
+  version: "v1"
+  title: "Brain-Inspired AI API (Dev)"
+  description: "基于生物大脑启发的AI系统API - 开发环境"
+  docs_url: "/docs"
+  redoc_url: "/redoc"
+  
+  # 请求限制（宽松限制）
+  rate_limiting:
+    enabled: false
+  
+  # 请求验证
+  request_validation:
+    enabled: false  # 开发环境禁用严格验证
+    max_request_size: "50MB"
+    timeout: 60
+  
+  # 响应缓存（禁用）
+  response_cache:
+    enabled: false
+
+# 开发工具配置
+development:
+  debug: true  # 启用调试模式
+  hot_reload: true  # 启用热重载
+  profile: true  # 启用性能分析
+  
+  # 数据库
+  database:
+    echo: true
+    pool_pre_ping: false
+    
+  # 缓存
+  cache:
+    debug: true
+    
+  # 日志
+  logging:
+    level: "DEBUG"
+    sql_echo: true  # 显示SQL语句
+  
+  # 额外的开发工具
+  tools:
+    # 调试工具
+    debug_toolbar: true
+    profiler: true
+    
+    # 代码质量
+    black_formatting: true
+    flake8_linting: true
+    
+    # 测试工具
+    test_coverage: true
+    test_timeout: 300  # 5分钟
+    
+    # 自动重载
+    auto_reload: true
+    reload_dirs: ["src", "config"]
+    
+    # Mock数据
+    mock_data: true
+    sample_data_size: 1000

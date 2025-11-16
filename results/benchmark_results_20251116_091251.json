@@ -1,0 +1,324 @@
+{
+  "timestamp": "2025-11-16T09:05:21.991034",
+  "system_info": {
+    "timestamp": "2025-11-16T09:05:21.990830",
+    "platform": "linux",
+    "python_version": "3.12.5 (main, Sep  5 2024, 00:16:34) [GCC 12.2.0]",
+    "cpu_count": 32,
+    "memory_total": 132648562688,
+    "memory_available": 116233728000,
+    "torch_version": "2.9.1+cu128",
+    "cuda_available": false
+  },
+  "benchmark_results": {
+    "training_speed": {
+      "config": {
+        "model_types": [
+          "brain_inspired",
+          "standard"
+        ],
+        "dataset_sizes": [
+          500,
+          1000,
+          2000
+        ],
+        "epochs": 10,
+        "device": "cpu"
+      },
+      "results": {
+        "brain_inspired": {
+          "size_500": {
+            "training_time": 11.358985185623169,
+            "memory_used": 129.27734375,
+            "samples_per_second": 44.018016735583,
+            "success": true
+          },
+          "size_1000": {
+            "training_time": 22.63128137588501,
+            "memory_used": -0.0078125,
+            "samples_per_second": 44.18662749982686,
+            "success": true
+          },
+          "size_2000": {
+            "training_time": 50.98944544792175,
+            "memory_used": 7.88671875,
+            "samples_per_second": 39.22380371919728,
+            "success": true
+          }
+        },
+        "standard": {
+          "size_500": {
+            "training_time": 6.435474395751953,
+            "memory_used": -0.05078125,
+            "samples_per_second": 77.69434998141695,
+            "success": true
+          },
+          "size_1000": {
+            "training_time": 14.254902124404907,
+            "memory_used": 0.1484375,
+            "samples_per_second": 70.1513059348169,
+            "success": true
+          },
+          "size_2000": {
+            "training_time": 24.994457483291626,
+            "memory_used": -0.015625,
+            "samples_per_second": 80.01773998643364,
+            "success": true
+          }
+        }
+      }
+    },
+    "inference_speed": {
+      "config": {
+        "model_types": [
+          "brain_inspired",
+          "standard"
+        ],
+        "batch_sizes": [
+          1,
+          16,
+          32,
+          64,
+          128
+        ],
+        "device": "cpu"
+      },
+      "results": {
+        "brain_inspired": {
+          "batch_1": {
+            "avg_inference_time": 0.00503124475479126,
+            "throughput": 198.75797118550017,
+            "memory_used": -8.55859375,
+            "success": true
+          },
+          "batch_16": {
+            "avg_inference_time": 0.006976864337921143,
+            "throughput": 2293.2938387572876,
+            "memory_used": 0.0,
+            "success": true
+          },
+          "batch_32": {
+            "avg_inference_time": 0.009975039958953857,
+            "throughput": 3208.007199136677,
+            "memory_used": 0.0,
+            "success": true
+          },
+          "batch_64": {
+            "avg_inference_time": 0.012047388553619386,
+            "throughput": 5312.354599932991,
+            "memory_used": 0.0,
+            "success": true
+          },
+          "batch_128": {
+            "avg_inference_time": 0.011946046352386474,
+            "throughput": 10714.842067763224,
+            "memory_used": 0.0,
+            "success": true
+          }
+        },
+        "standard": {
+          "batch_1": {
+            "avg_inference_time": 0.00010610342025756835,
+            "throughput": 9424.766869649238,
+            "memory_used": -0.0078125,
+            "success": true
+          },
+          "batch_16": {
+            "avg_inference_time": 0.0009278202056884765,
+            "throughput": 17244.720369209263,
+            "memory_used": 0.0,
+            "success": true
+          },
+          "batch_32": {
+            "avg_inference_time": 0.0020043587684631346,
+            "throughput": 15965.20568248187,
+            "memory_used": 0.0,
+            "success": true
+          },
+          "batch_64": {
+            "avg_inference_time": 0.003014435768127441,
+            "throughput": 21231.17058147058,
+            "memory_used": 0.0,
+            "success": true
+          },
+          "batch_128": {
+            "avg_inference_time": 0.0029845786094665526,
+            "throughput": 42887.126374894855,
+            "memory_used": 0.0,
+            "success": true
+          }
+        }
+      }
+    },
+    "memory_usage": {
+      "config": {
+        "model_types": [
+          "brain_inspired",
+          "standard"
+        ],
+        "dataset_sizes": [
+          500,
+          1000,
+          2000,
+          5000
+        ],
+        "device": "cpu"
+      },
+      "results": {
+        "brain_inspired": {
+          "size_500": {
+            "data_memory": 0.0,
+            "model_memory": 0.0,
+            "peak_memory": 3.8515625,
+            "total_memory": 3.8515625,
+            "success": true
+          },
+          "size_1000": {
+            "data_memory": 0.0,
+            "model_memory": 0.0,
+            "peak_memory": 0.109375,
+            "total_memory": 0.109375,
+            "success": true
+          },
+          "size_2000": {
+            "data_memory": 1.03125,
+            "model_memory": 0.0,
+            "peak_memory": 1.1328125,
+            "total_memory": 1.1328125,
+            "success": true
+          },
+          "size_5000": {
+            "data_memory": 2.3203125,
+            "model_memory": 0.0,
+            "peak_memory": 2.4140625,
+            "total_memory": 2.4140625,
+            "success": true
+          }
+        },
+        "standard": {
+          "size_500": {
+            "data_memory": 0.0,
+            "model_memory": 0.0,
+            "peak_memory": 0.0859375,
+            "total_memory": 0.0859375,
+            "success": true
+          },
+          "size_1000": {
+            "data_memory": 0.0,
+            "model_memory": 0.0,
+            "peak_memory": 0.1015625,
+            "total_memory": 0.1015625,
+            "success": true
+          },
+          "size_2000": {
+            "data_memory": 0.0,
+            "model_memory": 0.0,
+            "peak_memory": -0.15625,
+            "total_memory": -0.15625,
+            "success": true
+          },
+          "size_5000": {
+            "data_memory": 0.0,
+            "model_memory": 0.0,
+            "peak_memory": 0.1015625,
+            "total_memory": 0.1015625,
+            "success": true
+          }
+        }
+      }
+    },
+    "accuracy": {
+      "config": {
+        "model_types": [
+          "brain_inspired",
+          "standard"
+        ],
+        "datasets": [
+          "mnist",
+          "cifar",
+          "synthetic"
+        ],
+        "device": "cpu"
+      },
+      "results": {
+        "mnist": {
+          "brain_inspired": {
+            "accuracy": 0.10000000149011612,
+            "success": true
+          },
+          "standard": {
+            "accuracy": 0.10000000149011612,
+            "success": true
+          }
+        },
+        "cifar": {
+          "brain_inspired": {
+            "accuracy": 0.10499999672174454,
+            "success": true
+          },
+          "standard": {
+            "accuracy": 0.10999999940395355,
+            "success": true
+          }
+        },
+        "synthetic": {
+          "brain_inspired": {
+            "accuracy": 0.10000000149011612,
+            "success": true
+          },
+          "standard": {
+            "accuracy": 0.10499999672174454,
+            "success": true
+          }
+        }
+      }
+    },
+    "lifelong_learning": {
+      "config": {
+        "num_tasks": 5,
+        "device": "cpu"
+      },
+      "results": {
+        "task_accuracies": [
+          0.07500000298023224,
+          0.06499999761581421,
+          0.09000000357627869,
+          0.07500000298023224,
+          0.07000000029802322
+        ],
+        "retention_rates": [
+          1.0,
+          0.06499999761581421,
+          0.09000000357627869,
+          0.07500000298023224,
+          0.07000000029802322
+        ],
+        "avg_task_accuracy": 0.07500000149011612,
+        "avg_retention_rate": 0.26000000089406966
+      }
+    }
+  },
+  "summary": {
+    "overall_score": 47.33159364470477,
+    "strengths": [
+      "inference_speed表现优秀",
+      "memory_usage表现优秀"
+    ],
+    "weaknesses": [
+      "系统性能需要优化",
+      "training_speed表现较差，需要优化",
+      "accuracy表现较差，需要优化",
+      "lifelong_learning表现较差，需要优化"
+    ],
+    "recommendations": [
+      "建议优化算法和参数设置"
+    ],
+    "performance_grades": {
+      "training_speed": 5.9215307309545775,
+      "inference_speed": 94.49861192703247,
+      "accuracy": 10.333333288629849,
+      "memory_usage": 99.9044921875,
+      "lifelong_learning": 26.000000089406967
+    }
+  }
+}

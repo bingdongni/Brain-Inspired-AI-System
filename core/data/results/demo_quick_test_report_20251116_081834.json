@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-11-16T08:18:34.680489",
+  "total_tests": 7,
+  "passed_tests": 5,
+  "failed_tests": 2,
+  "success_rate": 0.7142857142857143,
+  "total_time": 1.7115106582641602,
+  "performance_grade": "C (一般)",
+  "recommendation": "系统部分正常，建议安装缺失的依赖",
+  "python_version": "3.12.5 (main, Sep  5 2024, 00:16:34) [GCC 12.2.0]",
+  "platform": "linux"
+}

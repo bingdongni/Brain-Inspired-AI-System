@@ -1,0 +1,75 @@
+{
+  "validation_summary": {
+    "total_checks": 9,
+    "passed_checks": 22,
+    "failed_checks": -13,
+    "success_rate": "244.4%"
+  },
+  "test_results": {
+    "项目文件结构": {
+      "status": "PASS",
+      "details": ""
+    },
+    "依赖包检查": {
+      "status": "PASS",
+      "details": ""
+    },
+    "模块导入检查": {
+      "status": "FAIL",
+      "details": "检查返回False"
+    },
+    "核心功能检查": {
+      "status": "FAIL",
+      "details": "检查返回False"
+    },
+    "CLI功能检查": {
+      "status": "FAIL",
+      "details": "检查返回False"
+    },
+    "配置文件检查": {
+      "status": "PASS",
+      "details": ""
+    },
+    "文档完整性检查": {
+      "status": "PASS",
+      "details": ""
+    },
+    "测试文件检查": {
+      "status": "PASS",
+      "details": ""
+    },
+    "性能测试": {
+      "status": "FAIL",
+      "details": "检查返回False"
+    }
+  },
+  "errors": [
+    "缺少依赖: scikit-learn",
+    "缺少依赖: pyyaml",
+    "缺少依赖: rich",
+    "模块 brain_ai: 导入失败 - unindent does not match any outer indentation level (attention_memory.py, line 336)",
+    "模块 brain_ai.cli: 导入失败 - unindent does not match any outer indentation level (attention_memory.py, line 336)",
+    "模块 modules.hippocampus: 导入失败 - cannot import name 'create_hippocampus_simulator' from 'modules.hippocampus.core.simulator' (/workspace/brain-inspired-ai/src/modules/hippocampus/core/simulator.py)",
+    "模块 knowledge_transfer: 导入失败 - cannot import name 'LWFTrainer' from 'knowledge_transfer.learning_without_forgetting' (/workspace/knowledge_transfer/learning_without_forgetting.py)",
+    "模块导入检查: 验证失败",
+    "核心功能检查失败: unindent does not match any outer indentation level (attention_memory.py, line 336)",
+    "详细错误: Traceback (most recent call last):\n  File \"/workspace/brain-inspired-ai/validate_project.py\", line 235, in check_core_functionality\n    from brain_ai import HippocampalSimulator, NeocortexArchitecture\n  File \"/workspace/brain-inspired-ai/src/brain_ai/__init__.py\", line 144, in <module>\n    from memory_interface.memory_interface_core import (\n  File \"/workspace/memory_interface/__init__.py\", line 6, in <module>\n    from .attention_mechanism import AttentionController, AttentionConfig\n  File \"/workspace/memory_interface/attention_mechanism/__init__.py\", line 8, in <module>\n    from .attention_memory import AttentionMemory\n  File \"/workspace/memory_interface/attention_mechanism/attention_memory.py\", line 336\n    强化_factor = 1.1\n                   ^\nIndentationError: unindent does not match any outer indentation level\n",
+    "核心功能检查: 验证失败",
+    "CLI帮助运行失败: ",
+    "CLI功能检查: 验证失败",
+    "性能测试失败: name 'HippocampalSimulator' is not defined",
+    "性能测试: 验证失败"
+  ],
+  "warnings": [
+    "缺少目录: tests, output",
+    "缺少文件: LICENSE",
+    "建议安装缺少的依赖: pip install scikit-learn pyyaml rich",
+    "配置文件不存在: src/config/development.yaml",
+    "配置文件不存在: src/config/production.yaml",
+    "未找到测试文件"
+  ],
+  "recommendations": [
+    "修复所有错误以确保项目正常运行",
+    "处理警告以提高项目质量"
+  ]
+}

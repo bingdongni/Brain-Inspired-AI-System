@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-11-16T08:31:14.655138",
+  "total_tests": 7,
+  "passed_tests": 7,
+  "failed_tests": 0,
+  "success_rate": 1.0,
+  "total_time": 1.5303726196289062,
+  "performance_grade": "A (优秀)",
+  "recommendation": "系统完全正常，可以开始使用",
+  "python_version": "3.12.5 (main, Sep  5 2024, 00:16:34) [GCC 12.2.0]",
+  "platform": "linux"
+}

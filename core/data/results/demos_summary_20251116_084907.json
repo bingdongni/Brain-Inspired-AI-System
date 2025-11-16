@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-11-16T08:49:07.522590",
+  "total_execution_time": 34.85570669174194,
+  "overall_stats": {
+    "total_demos": 1,
+    "successful_demos": 1,
+    "failed_demos": 0,
+    "success_rate": 1.0,
+    "avg_execution_time": 34.85570669174194
+  },
+  "categories": {
+    "core": {
+      "total": 1,
+      "successful": 1,
+      "total_time": 34.85570669174194,
+      "success_rate": 1.0,
+      "avg_time": 34.85570669174194
+    }
+  },
+  "performance_grade": "Excellent"
+}

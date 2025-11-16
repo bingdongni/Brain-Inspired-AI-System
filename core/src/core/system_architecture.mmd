@@ -1,0 +1,275 @@
+graph TB
+    %% 顶层系统架构
+    subgraph "大脑启发AI系统架构"
+        %% 核心管理层
+        CoreManagement[核心管理层<br/>Core Management]
+        
+        %% 主要系统模块
+        BrainSystem[大脑系统<br/>Brain System]
+        NeuralNetwork[神经网络库<br/>Neural Network]
+        TrainingFramework[训练框架<br/>Training Framework]
+        ModularArchitecture[模块化架构<br/>Modular Architecture]
+        
+        %% 数据流
+        DataFlow[数据流处理<br/>Data Flow Processing]
+        
+        %% 可视化层
+        Visualization[可视化层<br/>Visualization Layer]
+    end
+    
+    %% 核心管理层详细结构
+    subgraph "核心管理层"
+        BaseModule[基础模块<br/>BaseModule]
+        ModuleManager[模块管理器<br/>ModuleManager]
+        StateManager[状态管理器<br/>StateManager]
+        EventSystem[事件系统<br/>EventSystem]
+    end
+    
+    %% 大脑系统详细结构
+    subgraph "大脑系统 (Brain System)"
+        BrainRegions[大脑区域模块<br/>Brain Region Modules]
+        Hippocampus[海马体<br/>Hippocampus]
+        Prefrontal[前额叶<br/>Prefrontal Cortex]
+        Cortex[皮层<br/>Cortex]
+        Entorhinal[内嗅皮层<br/>Entorhinal]
+        Amygdala[杏仁核<br/>Amygdala]
+        
+        NeuralComponents[神经组件<br/>Neural Components]
+        Neurons[神经元<br/>Neurons]
+        Synapses[突触<br/>Synapses]
+        MemoryTraces[记忆痕迹<br/>Memory Traces]
+        
+        BrainFunctions[大脑功能<br/>Brain Functions]
+        Memory[记忆机制<br/>Memory]
+        Attention[注意力机制<br/>Attention]
+        Consciousness[意识模型<br/>Consciousness]
+        Oscillations[神经振荡<br/>Oscillations]
+    end
+    
+    %% 神经网络库详细结构
+    subgraph "神经网络库 (Neural Network Library)"
+        NetworkTypes[网络类型<br/>Network Types]
+        DenseLayer[全连接层<br/>Dense Layer]
+        ConvLayer[卷积层<br/>Convolutional Layer]
+        RecurrentLayer[循环层<br/>Recurrent Layer]
+        AttentionLayer[注意力层<br/>Attention Layer]
+        OscillatorLayer[振荡器层<br/>Oscillator Layer]
+        
+        ActivationFunctions[激活函数<br/>Activation Functions]
+        ReLU[ReLU]
+        Sigmoid[Sigmoid]
+        Tanh[Tanh]
+        GELU[GELU]
+        Gaussian[Gaussian]
+        Bistable[Bistable]
+        
+        Architectures[网络架构<br/>Network Architectures]
+        FeedForward[前馈网络<br/>FeedForward]
+        BrainInspired[大脑启发网络<br/>BrainInspired]
+        Transformer[Transformer]
+    end
+    
+    %% 训练框架详细结构
+    subgraph "训练框架 (Training Framework)"
+        Optimizers[优化器<br/>Optimizers]
+        Adam[Adam]
+        SGD[SGD]
+        RMSProp[RMSProp]
+        
+        LossFunctions[损失函数<br/>Loss Functions]
+        MSE[MSE]
+        CrossEntropy[CrossEntropy]
+        Focal[Focal]
+        Huber[Huber]
+        
+        Schedulers[学习率调度<br/>Learning Rate Schedulers]
+        Cosine[余弦退火<br/>Cosine]
+        Exponential[指数衰减<br/>Exponential]
+        Step[阶梯退火<br/>Step]
+        Cyclic[循环退火<br/>Cyclic]
+        
+        TrainingTools[训练工具<br/>Training Tools]
+        EarlyStopping[早停<br/>EarlyStopping]
+        Checkpointing[检查点<br/>Checkpointing]
+        MetricsTracking[指标跟踪<br/>MetricsTracking]
+    end
+    
+    %% 模块化架构详细结构
+    subgraph "模块化架构 (Modular Architecture)"
+        ComponentRegistry[组件注册表<br/>Component Registry]
+        DependencyGraph[依赖图<br/>Dependency Graph]
+        ConfigManager[配置管理器<br/>Configuration Manager]
+        PluginSystem[插件系统<br/>Plugin System]
+        InterfaceRegistry[接口注册表<br/>Interface Registry]
+    end
+    
+    %% 接口层
+    subgraph "接口层 (Interfaces)"
+        CoreInterfaces[核心接口<br/>Core Interfaces]
+        NeuralInterfaces[神经网络接口<br/>Neural Interfaces]
+        TrainingInterfaces[训练接口<br/>Training Interfaces]
+        DataInterfaces[数据接口<br/>Data Interfaces]
+        VisualInterfaces[可视化接口<br/>Visual Interfaces]
+        
+        ProtocolDefinitions[协议定义<br/>Protocol Definitions]
+        IModule[IModule]
+        INeuralComponent[INeuralComponent]
+        ITrainingComponent[ITrainingComponent]
+        IDataProcessor[IDataProcessor]
+    end
+    
+    %% 数据处理层
+    subgraph "数据处理层 (Data Processing)"
+        Preprocessing[数据预处理<br/>Preprocessing]
+        Normalization[标准化<br/>Normalization]
+        Augmentation[数据增强<br/>Data Augmentation]
+        Encoding[编码<br/>Encoding]
+        
+        Postprocessing[数据后处理<br/>Postprocessing]
+        Decoding[解码<br/>Decoding]
+        VisualizationData[可视化数据<br/>Visualization Data]
+    end
+    
+    %% 外部集成
+    subgraph "外部集成 (External Integration)"
+        APIs[API接口<br/>External APIs]
+        Databases[数据库<br/>Databases]
+        FileSystems[文件系统<br/>File Systems]
+        CloudServices[云服务<br/>Cloud Services]
+    end
+    
+    %% 数据流连接
+    DataFlow --> BrainSystem
+    BrainSystem --> NeuralNetwork
+    NeuralNetwork --> TrainingFramework
+    TrainingFramework --> ModularArchitecture
+    
+    %% 核心管理连接
+    BaseModule --> ModuleManager
+    ModuleManager --> StateManager
+    StateManager --> EventSystem
+    EventSystem --> CoreManagement
+    
+    %% 大脑系统内部连接
+    BrainRegions --> Hippocampus
+    BrainRegions --> Prefrontal
+    BrainRegions --> Cortex
+    BrainRegions --> Entorhinal
+    BrainRegions --> Amygdala
+    
+    NeuralComponents --> Neurons
+    NeuralComponents --> Synapses
+    NeuralComponents --> MemoryTraces
+    
+    BrainFunctions --> Memory
+    BrainFunctions --> Attention
+    BrainFunctions --> Consciousness
+    BrainFunctions --> Oscillations
+    
+    %% 神经网络内部连接
+    NetworkTypes --> DenseLayer
+    NetworkTypes --> ConvLayer
+    NetworkTypes --> RecurrentLayer
+    NetworkTypes --> AttentionLayer
+    NetworkTypes --> OscillatorLayer
+    
+    ActivationFunctions --> ReLU
+    ActivationFunctions --> Sigmoid
+    ActivationFunctions --> Tanh
+    ActivationFunctions --> GELU
+    ActivationFunctions --> Gaussian
+    ActivationFunctions --> Bistable
+    
+    Architectures --> FeedForward
+    Architectures --> BrainInspired
+    Architectures --> Transformer
+    
+    %% 训练框架内部连接
+    Optimizers --> Adam
+    Optimizers --> SGD
+    Optimizers --> RMSProp
+    
+    LossFunctions --> MSE
+    LossFunctions --> CrossEntropy
+    LossFunctions --> Focal
+    LossFunctions --> Huber
+    
+    Schedulers --> Cosine
+    Schedulers --> Exponential
+    Schedulers --> Step
+    Schedulers --> Cyclic
+    
+    TrainingTools --> EarlyStopping
+    TrainingTools --> Checkpointing
+    TrainingTools --> MetricsTracking
+    
+    %% 模块化架构内部连接
+    ComponentRegistry --> DependencyGraph
+    DependencyGraph --> ConfigManager
+    ConfigManager --> PluginSystem
+    PluginSystem --> InterfaceRegistry
+    
+    %% 接口层内部连接
+    CoreInterfaces --> IModule
+    NeuralInterfaces --> INeuralComponent
+    TrainingInterfaces --> ITrainingComponent
+    DataInterfaces --> IDataProcessor
+    VisualInterfaces --> IVisualizationComponent
+    
+    %% 主要模块间的数据流
+    BrainSystem -.-> NeuralNetwork
+    NeuralNetwork -.-> TrainingFramework
+    TrainingFramework -.-> ModularArchitecture
+    ModularArchitecture -.-> CoreManagement
+    
+    %% 模块化系统连接
+    BrainSystem --> ComponentRegistry
+    NeuralNetwork --> ComponentRegistry
+    TrainingFramework --> ComponentRegistry
+    
+    %% 接口实现连接
+    BrainSystem -.-> NeuralInterfaces
+    NeuralNetwork -.-> NeuralInterfaces
+    TrainingFramework -.-> TrainingInterfaces
+    
+    %% 数据处理连接
+    DataFlow --> Preprocessing
+    DataFlow --> Postprocessing
+    Preprocessing --> Normalization
+    Preprocessing --> Augmentation
+    Preprocessing --> Encoding
+    
+    Postprocessing --> Decoding
+    Postprocessing --> VisualizationData
+    
+    %% 可视化连接
+    VisualizationData --> Visualization
+    Visualization --> VisualInterfaces
+    
+    %% 外部连接
+    DataFlow --> APIs
+    DataFlow --> Databases
+    DataFlow --> FileSystems
+    DataFlow --> CloudServices
+    
+    %% 样式定义
+    classDef coreClass fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef brainClass fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef neuralClass fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef trainingClass fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef archClass fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef interfaceClass fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+    classDef dataClass fill:#e3f2fd,stroke:#0d47a1,stroke-width:2px
+    classDef visualClass fill:#fdf2e9,stroke:#bf360c,stroke-width:2px
+    classDef externalClass fill:#f5f5f5,stroke:#424242,stroke-width:2px
+    
+    %% 应用样式
+    class CoreManagement,BaseModule,ModuleManager,StateManager,EventSystem coreClass
+    class BrainSystem,BrainRegions,Hippocampus,Prefrontal,Cortex,Entorhinal,Amygdala,Neurons,Synapses,MemoryTraces,Memory,Attention,Consciousness,Oscillations brainClass
+    class NeuralNetwork,DenseLayer,ConvLayer,RecurrentLayer,AttentionLayer,OscillatorLayer,ReLU,Sigmoid,Tanh,GELU,Gaussian,Bistable,FeedForward,BrainInspired,Transformer neuralClass
+    class TrainingFramework,Adam,SGD,RMSProp,MSE,CrossEntropy,Focal,Huber,Cosine,Exponential,Step,Cyclic,EarlyStopping,Checkpointing,MetricsTracking trainingClass
+    class ModularArchitecture,ComponentRegistry,DependencyGraph,ConfigManager,PluginSystem,InterfaceRegistry archClass
+    class CoreInterfaces,NeuralInterfaces,TrainingInterfaces,DataInterfaces,VisualInterfaces,IModule,INeuralComponent,ITrainingComponent,IDataProcessor interfaceClass
+    class DataFlow,Preprocessing,Normalization,Augmentation,Encoding,Postprocessing,Decoding,VisualizationData dataClass
+    class Visualization visualClass
+    class APIs,Databases,FileSystems,CloudServices externalClass

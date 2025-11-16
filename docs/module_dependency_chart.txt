@@ -1,0 +1,124 @@
+脑启发AI框架 - 模块依赖关系图
+================================
+
+系统架构层次：
+
+应用层
+  │
+  ├── 高级认知模块 (Advanced Cognition)
+  │     ├── EndToEndPipeline
+  │     ├── AnalogicalLearning  
+  │     ├── MultiStepReasoning
+  │     └── SystemIntegration
+  │
+核心层
+  │
+  ├── 核心控制系统
+  │     ├── BrainSystem (主控制器)
+  │     ├── BaseModule (基础模块类)
+  │     ├── Architecture (架构管理器)
+  │     └── Interfaces (接口定义)
+  │
+功能模块层
+  │
+  ├── 海马体模块 (Hippocampus)
+  │     ├── HippocampusSimulator (核心模拟器)
+  │     ├── EpisodicMemory (情景记忆)
+  │     ├── FastLearning (快速学习)
+  │     ├── PatternSeparation (模式分离)
+  │     ├── CA3Network (CA3区域)
+  │     ├── CA1Network (CA1区域)
+  │     └── DentateGyrus (齿状回)
+  │
+  ├── 新皮层模块 (Neocortex)
+  │     ├── NeocortexArchitecture (新皮层架构)
+  │     ├── HierarchicalProcessor (层次处理器)
+  │     ├── AttentionModule (注意力模块)
+  │     ├── DecisionModule (决策模块)
+  │     ├── PredictionModule (预测模块)
+  │     ├── CrossModalModule (跨模态模块)
+  │     ├── AbstractionEngine (抽象引擎)
+  │     └── SparseActivation (稀疏激活)
+  │
+  ├── 持续学习模块 (Continual Learning)
+  │     ├── ContinualLearner (持续学习器)
+  │     ├── ElasticWeightConsolidation (弹性权重巩固)
+  │     ├── GenerativeReplay (生成重放)
+  │     ├── DynamicExpansion (动态扩展)
+  │     ├── KnowledgeTransfer (知识迁移)
+  │     └── ProgressiveNeuralNetwork (渐进神经网络)
+  │
+  ├── 动态路由模块 (Dynamic Routing)
+  │     ├── DynamicRoutingController (动态路由控制器)
+  │     ├── AdaptiveAllocation (自适应分配)
+  │     ├── EfficiencyOptimization (效率优化)
+  │     ├── ReinforcementRouting (强化学习路由)
+  │     ├── LoadBalancer (负载均衡器)
+  │     ├── IntelligentPathSelector (智能路径选择)
+  │     └── PredictiveEarlyExit (预测性早退)
+  │
+  └── 记忆接口模块 (Memory Interface)
+        ├── MemoryInterface (记忆接口)
+        ├── AttentionMechanism (注意力机制)
+        ├── CommunicationController (通信控制器)
+        ├── ConsolidationEngine (巩固引擎)
+        ├── AttentionController (注意力控制器)
+        ├── NeocortexInterface (新皮层接口)
+        └── HippocampusInterface (海马体接口)
+  │
+基础层
+  │
+  └── 工具模块 (Utilities)
+        ├── ConfigManager (配置管理器)
+        ├── Logger (日志记录器)
+        ├── MetricsCollector (指标收集器)
+        ├── DataProcessor (数据处理器)
+        ├── Visualization (可视化工具)
+        ├── ModelUtils (模型工具)
+        └── ExceptionHandling (异常处理)
+
+核心数据流：
+============
+
+输入数据 → 动态路由控制器 → 功能模块
+                ↓
+          海马体模块 ← 新皮层模块
+                ↓
+          持续学习模块 ← 记忆接口模块
+                ↓
+          高级认知模块 → 决策输出
+
+主要依赖关系：
+=============
+
+1. BrainSystem 依赖于所有功能模块
+2. BaseModule 是所有功能模块的基础类
+3. Architecture 负责模块注册和连接
+4. MemoryInterface 统一不同记忆系统的通信
+5. DynamicRoutingController 智能分发数据和请求
+6. ContinualLearner 协调所有学习相关模块
+7. 各功能模块通过标准接口进行通信
+
+性能优化路径：
+=============
+
+1. 内存优化：稀疏激活、梯度检查点
+2. 计算优化：混合精度、并行处理
+3. 存储优化：记忆压缩、缓存机制
+4. 网络优化：动态路由、负载均衡
+
+扩展指南：
+==========
+
+1. 继承 BaseModule 创建新模块
+2. 实现必需的生命周期方法
+3. 注册到 Architecture 系统
+4. 配置相应的接口协议
+5. 添加单元测试和文档
+
+这种模块化设计确保了：
+- 高内聚：每个模块职责单一明确
+- 低耦合：模块间依赖关系清晰
+- 可扩展：便于添加新功能模块
+- 可维护：独立开发和测试
+- 可复用：模块可重用

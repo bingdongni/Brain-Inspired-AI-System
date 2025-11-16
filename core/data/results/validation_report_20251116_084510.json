@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-11-16T08:45:10.876421",
+  "total_execution_time": 0,
+  "summary": {
+    "total_tests": 5,
+    "passed_tests": 5,
+    "failed_tests": 0,
+    "success_rate": 1.0,
+    "status": "PASS"
+  },
+  "category_results": {
+    "dependencies": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "success_rate": 1.0
+    }
+  },
+  "detailed_results": [
+    {
+      "test_name": "required_dependency_numpy",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "numpy",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "required_dependency_pathlib",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "pathlib",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "optional_dependency_torch",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "torch",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "optional_dependency_sklearn",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "sklearn",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "optional_dependency_matplotlib",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "matplotlib",
+        "status": "available"
+      }
+    }
+  ],
+  "system_info": {
+    "python_version": "3.12.5 (main, Sep  5 2024, 00:16:34) [GCC 12.2.0]",
+    "platform": "linux",
+    "execution_path": "/workspace/brain-inspired-ai"
+  },
+  "recommendations": [
+    "系统整体运行良好",
+    "关键功能测试未完全通过，系统可能无法正常工作"
+  ]
+}

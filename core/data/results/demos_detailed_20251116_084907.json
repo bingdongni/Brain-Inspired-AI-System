@@ -1,0 +1,23 @@
+{
+  "cli_demo": {
+    "success": true,
+    "execution_time": 34.85570669174194,
+    "return_code": 0,
+    "stdout": "🎭 自动演示模式\n🧠 正在初始化脑启发AI系统...\n📋 检查系统依赖...\n✅ 所有依赖检查通过\n⚠️ 配置文件加载失败，使用默认配置: Expecting value: line 1 column 1 (char 0)\n📁 目录结构创建完成\n✅ 系统初始化完成!\n📊 生成示例数据集: synthetic\n✅ 合成数据生成完成 - 训练样本: 1000, 测试样本: 200\n🏗️ 创建模型: brain_inspired\n✅ 脑启发模型创建完成\n   - 输入维度: 20\n   - 隐藏维度: 256\n   - 输出维度: 5\n   - 层数: 4\n🚀 开始训练模型: brain_inspired\n📈 训练参数: epochs=10, batch_size=32, lr=0.001\n   Epoch 1/10: Loss=1.6102, Accuracy=0.1600\n   Epoch 2/10: Loss=1.6092, Accuracy=0.1650\n   Epoch 3/10: Loss=1.6030, Accuracy=0.1850\n   Epoch 4/10: Loss=1.5886, Accuracy=0.1750\n   Epoch 5/10: Loss=1.5720, Accuracy=0.1800\n   Epoch 6/10: Loss=1.5617, Accuracy=0.1400\n   Epoch 7/10: Loss=1.5349, Accuracy=0.2050\n   Epoch 8/10: Loss=1.4823, Accuracy=0.2250\n   Epoch 9/10: Loss=1.4451, Accuracy=0.1750\n   Epoch 10/10: Loss=1.3742, Accuracy=0.2250\n✅ 训练完成!\n   - 最终损失: 1.3742\n   - 最终准确率: 0.2250\n📊 评估模型: brain_inspired\n✅ 评估完成!\n   - 准确率: 0.2250\n   - 测试样本数: 200\n💾 结果已保存到: results/demo_results_20251116_084907.json\n✅ 自动演示完成!\n",
+    "stderr": "",
+    "script_path": "/workspace/brain-inspired-ai/cli_demo.py",
+    "demo_info": {
+      "script": "cli_demo.py",
+      "args": [
+        "--mode",
+        "demo",
+        "--dataset",
+        "synthetic",
+        "--epochs",
+        "10"
+      ],
+      "description": "交互式命令行界面演示",
+      "category": "core"
+    }
+  }
+}

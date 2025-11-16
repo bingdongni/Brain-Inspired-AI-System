@@ -1,0 +1,212 @@
+{
+  "timestamp": "2025-11-16T09:06:52.553585",
+  "cpu_tests": {
+    "duration_seconds": 10,
+    "average_cpu_usage": 5.411111111111111,
+    "max_cpu_usage": 9.5,
+    "min_cpu_usage": 3.3,
+    "std_dev_cpu_usage": 2.0318984007846237,
+    "average_per_core": {
+      "core_0": 6.688888888888889,
+      "core_1": 6.288888888888889,
+      "core_2": 5.988888888888889,
+      "core_3": 6.788888888888889,
+      "core_4": 8.477777777777778,
+      "core_5": 6.611111111111111,
+      "core_6": 9.4,
+      "core_7": 6.566666666666666,
+      "core_8": 8.21111111111111,
+      "core_9": 8.38888888888889,
+      "core_10": 10.811111111111112,
+      "core_11": 5.677777777777778,
+      "core_12": 10.155555555555555,
+      "core_13": 5.055555555555555,
+      "core_14": 6.588888888888889,
+      "core_15": 6.688888888888889,
+      "core_16": 8.233333333333333,
+      "core_17": 8.488888888888889,
+      "core_18": 8.033333333333333,
+      "core_19": 4.344444444444444,
+      "core_20": 7.477777777777778,
+      "core_21": 5.355555555555555,
+      "core_22": 6.166666666666667,
+      "core_23": 10.966666666666667,
+      "core_24": 10.38888888888889,
+      "core_25": 8.255555555555555,
+      "core_26": 8.544444444444444,
+      "core_27": 4.011111111111111,
+      "core_28": 13.28888888888889,
+      "core_29": 8.233333333333333,
+      "core_30": 10.044444444444444,
+      "core_31": 7.055555555555555
+    },
+    "peak_per_core": {
+      "core_0": 20.0,
+      "core_1": 18.2,
+      "core_2": 20.0,
+      "core_3": 20.0,
+      "core_4": 22.2,
+      "core_5": 27.3,
+      "core_6": 36.4,
+      "core_7": 20.0,
+      "core_8": 20.0,
+      "core_9": 27.3,
+      "core_10": 30.0,
+      "core_11": 11.1,
+      "core_12": 20.0,
+      "core_13": 18.2,
+      "core_14": 20.0,
+      "core_15": 30.0,
+      "core_16": 20.0,
+      "core_17": 20.0,
+      "core_18": 20.0,
+      "core_19": 20.0,
+      "core_20": 20.0,
+      "core_21": 20.0,
+      "core_22": 27.3,
+      "core_23": 18.2,
+      "core_24": 20.0,
+      "core_25": 25.0,
+      "core_26": 20.0,
+      "core_27": 20.0,
+      "core_28": 30.0,
+      "core_29": 25.0,
+      "core_30": 22.2,
+      "core_31": 20.0
+    },
+    "stress_test": {
+      "single_thread_duration": 0.7051572799682617,
+      "multi_thread_duration": 3.09405779838562,
+      "multi_process_duration": 1.0016264915466309,
+      "thread_efficiency": 0.22790695129748065,
+      "process_efficiency": 0.7040122100598745
+    }
+  },
+  "memory_tests": {
+    "allocation_10MB": {
+      "allocation_time": 0.0016598701477050781,
+      "memory_used_bytes": 9068544,
+      "theoretical_size": 10485760,
+      "efficiency": 0.86484375
+    },
+    "allocation_50MB": {
+      "allocation_time": 0.10102605819702148,
+      "memory_used_bytes": 57991168,
+      "theoretical_size": 52428800,
+      "efficiency": 1.10609375
+    },
+    "allocation_100MB": {
+      "allocation_time": 0.2002418041229248,
+      "memory_used_bytes": 176447488,
+      "theoretical_size": 104857600,
+      "efficiency": 1.682734375
+    },
+    "allocation_200MB": {
+      "allocation_time": 0.39603638648986816,
+      "memory_used_bytes": 478543872,
+      "theoretical_size": 209715200,
+      "efficiency": 2.281875
+    },
+    "memory_release_time": 0.900968074798584,
+    "fragmentation_test": {
+      "duration": 0.702190637588501,
+      "objects_remaining": 100
+    },
+    "memory_before": {
+      "used": 16957730816,
+      "available": 115690831872
+    },
+    "memory_after": {
+      "used": 17298325504,
+      "available": 115350237184
+    }
+  },
+  "gpu_tests": {
+    "available": false,
+    "error": "GPUtil not available"
+  },
+  "io_tests": {
+    "size_1024_bytes": {
+      "write_time": 3.910064697265625e-05,
+      "read_time": 1.2159347534179688e-05,
+      "random_read_time": 0.0001513957977294922,
+      "write_speed_mb_s": 24.975609756097562,
+      "read_speed_mb_s": 80.31372549019608,
+      "data_integrity": true
+    },
+    "size_10240_bytes": {
+      "write_time": 6.914138793945312e-05,
+      "read_time": 8.106231689453125e-06,
+      "random_read_time": 0.00013399124145507812,
+      "write_speed_mb_s": 141.24137931034483,
+      "read_speed_mb_s": 1204.7058823529412,
+      "data_integrity": true
+    },
+    "size_102400_bytes": {
+      "write_time": 0.0007283687591552734,
+      "read_time": 5.936622619628906e-05,
+      "random_read_time": 0.00021219253540039062,
+      "write_speed_mb_s": 134.07528641571196,
+      "read_speed_mb_s": 1644.9799196787149,
+      "data_integrity": true
+    },
+    "size_1048576_bytes": {
+      "write_time": 0.002965688705444336,
+      "read_time": 0.00039696693420410156,
+      "random_read_time": 0.0002281665802001953,
+      "write_speed_mb_s": 337.18980625452207,
+      "read_speed_mb_s": 2519.1015015015014,
+      "data_integrity": true
+    },
+    "network_io": {
+      "url": "https://httpbin.org/get",
+      "response_time": 1.3563532829284668,
+      "status_code": 200,
+      "content_length": 311
+    }
+  },
+  "concurrency_tests": {
+    "threading_performance": {
+      "threads_1": {
+        "cpu_task_duration": 0.04215359687805176,
+        "io_task_duration": 2.0960161685943604,
+        "cpu_results_count": 10,
+        "io_results_count": 20
+      },
+      "threads_2": {
+        "cpu_task_duration": 0.10234856605529785,
+        "io_task_duration": 1.0962402820587158,
+        "cpu_results_count": 10,
+        "io_results_count": 20
+      },
+      "threads_4": {
+        "cpu_task_duration": 0.10301804542541504,
+        "io_task_duration": 0.5007777214050293,
+        "cpu_results_count": 10,
+        "io_results_count": 20
+      },
+      "threads_8": {
+        "cpu_task_duration": 0.19891667366027832,
+        "io_task_duration": 0.3969564437866211,
+        "cpu_results_count": 10,
+        "io_results_count": 20
+      }
+    },
+    "resource_contention": {
+      "with_lock_duration": 0.0008833408355712891,
+      "without_lock_duration": 0.0006277561187744141,
+      "lock_overhead": 0.000255584716796875,
+      "final_counter_value": 10,
+      "expected_value": 10,
+      "contention_detected": false
+    }
+  },
+  "system_info": {
+    "cpu_count": 32,
+    "cpu_count_logical": 32,
+    "memory_total": 132648562688,
+    "platform": "linux",
+    "python_version": "3.12.5 (main, Sep  5 2024, 00:16:34) [GCC 12.2.0]",
+    "gpu_available": false
+  }
+}

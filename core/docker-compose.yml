@@ -1,0 +1,221 @@
+version: '3.8'
+
+services:
+  # Brain-Inspired AI 应用
+  brain-ai:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - ENVIRONMENT=production
+      - CUDA_VISIBLE_DEVICES=0
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+      - ./config:/app/config
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: python -m brain_ai.scripts.serve --config config/production.yaml
+
+  # Redis 缓存服务
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+
+  # PostgreSQL 数据库
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=brain_ai
+      - POSTGRES_USER=brain_ai
+      - POSTGRES_PASSWORD=secure_password_123
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+
+  # InfluxDB 时序数据库（用于指标存储）
+  influxdb:
+    image: influxdb:2.0-alpine
+    ports:
+      - "8086:8086"
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=admin_password_123
+      - DOCKER_INFLUXDB_INIT_ORG=brain-ai-org
+      - DOCKER_INFLUXDB_INIT_BUCKET=brain-ai-metrics
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=my-token-123
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+
+  # Prometheus 监控
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+
+  # Grafana 仪表板
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin_123
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+
+  # Jupyter Notebook（用于实验和开发）
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile.jupyter
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=brain_ai_token_123
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/work/data
+      - ./models:/home/jovyan/work/models
+      - ./src:/home/jovyan/work/src
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+    profiles:
+      - development
+
+  # Nginx 反向代理
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - brain-ai
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+    profiles:
+      - production
+
+  # 消息队列（RabbitMQ）
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+    profiles:
+      - messaging
+
+  # 任务队列工作进程（Celery Worker）
+  celery-worker:
+    build: .
+    command: celery -A brain_ai.scripts.celery_app worker --loglevel=info --concurrency=2
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/2
+      - CELERY_RESULT_BACKEND=redis://redis:6379/3
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      - redis
+      - brain-ai
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+    profiles:
+      - worker
+
+  # Celery Flower 监控
+  celery-flower:
+    image: mher/flower:0.9.7
+    command: flower --port=5555 --broker=redis://redis:6379/2
+    ports:
+      - "5555:5555"
+    networks:
+      - brain-ai-network
+    restart: unless-stopped
+    profiles:
+      - worker
+
+# 数据卷
+volumes:
+  postgres-data:
+    driver: local
+  redis-data:
+    driver: local
+  influxdb-data:
+    driver: local
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local
+  rabbitmq-data:
+    driver: local
+
+# 网络
+networks:
+  brain-ai-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-11-16T03:57:40.669971",
+  "dependencies": {
+    "PyTorch": true,
+    "scikit-learn": true,
+    "NumPy": true,
+    "Platform": true
+  },
+  "availability_rate": 100.0,
+  "grade": "优秀 ⭐⭐⭐⭐⭐",
+  "recommendation": "系统核心功能完整，可以进行完整测试",
+  "system_info": {
+    "platform": "Linux",
+    "python_version": "3.12.5",
+    "cpu_count": 32,
+    "memory_total_gb": 123.53858947753906
+  }
+}

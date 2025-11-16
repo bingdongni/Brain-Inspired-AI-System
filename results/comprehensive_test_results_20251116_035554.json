@@ -1,0 +1,557 @@
+{
+  "timestamp": "2025-11-16T03:35:33.036933",
+  "system_info": {
+    "platform": "Linux",
+    "platform_release": "5.10.134-19.1.al8.x86_64",
+    "architecture": "x86_64",
+    "processor": "",
+    "python_version": "3.12.5",
+    "cpu_count": 32,
+    "memory_total": 132648550400,
+    "memory_available": 117521195008,
+    "torch_version": "2.9.1+cu128",
+    "cuda_available": false
+  },
+  "test_suites": {
+    "benchmark": {
+      "training_speed": {
+        "config": {
+          "input_dim": 64,
+          "hidden_dim": 128,
+          "output_dim": 10,
+          "epochs": 10,
+          "batch_size": 32,
+          "learning_rate": 0.001
+        },
+        "models_tested": [
+          "brain_inspired_attention",
+          "brain_inspired_no_attention",
+          "standard"
+        ],
+        "dataset_sizes": [
+          500,
+          1000,
+          2000
+        ],
+        "results": {
+          "brain_inspired_attention": {
+            "size_500": {
+              "training_time": 15.498268365859985,
+              "memory_used": 125.63671875,
+              "throughput": 32.26166873593529,
+              "final_loss": 9.789683019789663e-07,
+              "success": true
+            },
+            "size_1000": {
+              "training_time": 30.80017876625061,
+              "memory_used": 0.5,
+              "throughput": 32.467344023852,
+              "final_loss": 1.3548572088128985e-06,
+              "success": true
+            },
+            "size_2000": {
+              "training_time": 60.79651689529419,
+              "memory_used": 10.42578125,
+              "throughput": 32.8966214206723,
+              "final_loss": 1.4075268492458943e-06,
+              "success": true
+            }
+          },
+          "brain_inspired_no_attention": {
+            "size_500": {
+              "training_time": 6.096684455871582,
+              "memory_used": 0.20703125,
+              "throughput": 82.01178913211771,
+              "final_loss": 0.0001892882846732391,
+              "success": true
+            },
+            "size_1000": {
+              "training_time": 12.694684743881226,
+              "memory_used": -0.05078125,
+              "throughput": 78.77312593225247,
+              "final_loss": 7.812146992591806e-05,
+              "success": true
+            },
+            "size_2000": {
+              "training_time": 23.794451236724854,
+              "memory_used": 0.1796875,
+              "throughput": 84.05320972114534,
+              "final_loss": 1.281518210643775e-05,
+              "success": true
+            }
+          },
+          "standard": {
+            "size_500": {
+              "training_time": 6.297491788864136,
+              "memory_used": -0.01171875,
+              "throughput": 79.3966894699491,
+              "final_loss": 0.00014219418562788633,
+              "success": true
+            },
+            "size_1000": {
+              "training_time": 12.098596096038818,
+              "memory_used": -0.09375,
+              "throughput": 82.65421806480575,
+              "final_loss": 6.367696238385179e-05,
+              "success": true
+            },
+            "size_2000": {
+              "training_time": 23.691031455993652,
+              "memory_used": 0.046875,
+              "throughput": 84.42013188471856,
+              "final_loss": 1.5617867654602e-05,
+              "success": true
+            }
+          }
+        }
+      },
+      "inference_speed": {
+        "config": {
+          "input_dim": 64,
+          "hidden_dim": 128,
+          "output_dim": 10,
+          "epochs": 10,
+          "batch_size": 32,
+          "learning_rate": 0.001
+        },
+        "models_tested": [
+          "brain_inspired_attention",
+          "brain_inspired_no_attention"
+        ],
+        "batch_sizes": [
+          1,
+          16,
+          32,
+          64,
+          128
+        ],
+        "test_samples": 1000,
+        "results": {
+          "brain_inspired_attention": {
+            "batch_1": {
+              "avg_inference_time": 0.006056327819824219,
+              "throughput": 165.11655738427717,
+              "memory_used": -8.36328125,
+              "success": true
+            },
+            "batch_16": {
+              "avg_inference_time": 0.008930091857910155,
+              "throughput": 1791.6948957056265,
+              "memory_used": 0.0,
+              "success": true
+            },
+            "batch_32": {
+              "avg_inference_time": 0.006986453533172608,
+              "throughput": 4580.292397002249,
+              "memory_used": 0.0,
+              "success": true
+            },
+            "batch_64": {
+              "avg_inference_time": 0.012000806331634521,
+              "throughput": 5332.974987796769,
+              "memory_used": 0.0,
+              "success": true
+            },
+            "batch_128": {
+              "avg_inference_time": 0.010053894519805907,
+              "throughput": 12731.384812904429,
+              "memory_used": 0.0,
+              "success": true
+            }
+          },
+          "brain_inspired_no_attention": {
+            "batch_1": {
+              "avg_inference_time": 0.00017268896102905272,
+              "throughput": 5790.758100813188,
+              "memory_used": -0.03515625,
+              "success": true
+            },
+            "batch_16": {
+              "avg_inference_time": 0.0048343873023986815,
+              "throughput": 3309.6231226780833,
+              "memory_used": 0.25390625,
+              "success": true
+            },
+            "batch_32": {
+              "avg_inference_time": 0.00400637149810791,
+              "throughput": 7987.277269497511,
+              "memory_used": 0.0,
+              "success": true
+            },
+            "batch_64": {
+              "avg_inference_time": 0.00401064395904541,
+              "throughput": 15957.537157008795,
+              "memory_used": 0.0,
+              "success": true
+            },
+            "batch_128": {
+              "avg_inference_time": 0.0059698915481567385,
+              "throughput": 21440.925512209888,
+              "memory_used": 0.0,
+              "success": true
+            }
+          }
+        }
+      },
+      "memory_usage": {
+        "config": {
+          "input_dim": 64,
+          "hidden_dim": 128,
+          "output_dim": 10,
+          "epochs": 10,
+          "batch_size": 32,
+          "learning_rate": 0.001
+        },
+        "models_tested": [
+          "brain_inspired_attention",
+          "brain_inspired_no_attention"
+        ],
+        "dataset_sizes": [
+          500,
+          1000,
+          2000,
+          5000
+        ],
+        "results": {
+          "brain_inspired_attention": {
+            "size_500": {
+              "data_memory": 0.0,
+              "model_memory": 0.0,
+              "peak_memory": 3.84375,
+              "total_memory": 3.84375,
+              "success": true
+            },
+            "size_1000": {
+              "data_memory": 0.0,
+              "model_memory": 0.0,
+              "peak_memory": 0.125,
+              "total_memory": 0.125,
+              "success": true
+            },
+            "size_2000": {
+              "data_memory": 0.0,
+              "model_memory": 0.0,
+              "peak_memory": 3.8515625,
+              "total_memory": 3.8515625,
+              "success": true
+            },
+            "size_5000": {
+              "data_memory": 2.0625,
+              "model_memory": 0.0,
+              "peak_memory": 2.1484375,
+              "total_memory": 2.1484375,
+              "success": true
+            }
+          },
+          "brain_inspired_no_attention": {
+            "size_500": {
+              "data_memory": 0.0,
+              "model_memory": 0.0,
+              "peak_memory": -1.8984375,
+              "total_memory": -1.8984375,
+              "success": true
+            },
+            "size_1000": {
+              "data_memory": 0.0,
+              "model_memory": 0.0,
+              "peak_memory": -0.12890625,
+              "total_memory": -0.12890625,
+              "success": true
+            },
+            "size_2000": {
+              "data_memory": 0.0,
+              "model_memory": 0.0,
+              "peak_memory": -0.0078125,
+              "total_memory": -0.0078125,
+              "success": true
+            },
+            "size_5000": {
+              "data_memory": 0.0,
+              "model_memory": 0.0,
+              "peak_memory": 0.08984375,
+              "total_memory": 0.08984375,
+              "success": true
+            }
+          }
+        }
+      }
+    },
+    "continual_learning": {
+      "catastrophic_forgetting": {
+        "task1_accuracy_before": 1.0,
+        "task1_accuracy_after": 1.0,
+        "task2_accuracy": 1.0,
+        "forgetting_rate": 0.0,
+        "success": true
+      },
+      "multitask_learning": {
+        "task1_accuracy": 0.4166666666666667,
+        "task2_accuracy": 0.0,
+        "task3_accuracy": 0.0,
+        "average_accuracy": 0.1388888888888889,
+        "success": true
+      },
+      "knowledge_transfer": {
+        "source_accuracy": 1.0,
+        "transfer_accuracy": 1.0,
+        "scratch_accuracy": 1.0,
+        "transfer_advantage": 0.0,
+        "success": true
+      }
+    },
+    "performance": {
+      "code_profiling": {
+        "test_data_size": 2000,
+        "configurations": [
+          {
+            "use_attention": true,
+            "hidden_dim": 64,
+            "batch_size": 32
+          },
+          {
+            "use_attention": true,
+            "hidden_dim": 128,
+            "batch_size": 32
+          },
+          {
+            "use_attention": true,
+            "hidden_dim": 128,
+            "batch_size": 64
+          },
+          {
+            "use_attention": false,
+            "hidden_dim": 128,
+            "batch_size": 32
+          }
+        ],
+        "results": [
+          {
+            "config": {
+              "use_attention": true,
+              "hidden_dim": 64,
+              "batch_size": 32
+            },
+            "training_time": 35.79243803024292,
+            "memory_used": 2.0,
+            "avg_inference_time": 0.009034805297851563,
+            "final_accuracy": 1.0,
+            "throughput": 55.87772473923387,
+            "success": true
+          },
+          {
+            "config": {
+              "use_attention": true,
+              "hidden_dim": 128,
+              "batch_size": 32
+            },
+            "training_time": 64.29855608940125,
+            "memory_used": 0.58203125,
+            "avg_inference_time": 0.00901754856109619,
+            "final_accuracy": 1.0,
+            "throughput": 31.104897553518672,
+            "success": true
+          },
+          {
+            "config": {
+              "use_attention": true,
+              "hidden_dim": 128,
+              "batch_size": 64
+            },
+            "training_time": 27.499906301498413,
+            "memory_used": -0.11328125,
+            "avg_inference_time": 0.010995354652404785,
+            "final_accuracy": 1.0,
+            "throughput": 72.72752052580718,
+            "success": true
+          },
+          {
+            "config": {
+              "use_attention": false,
+              "hidden_dim": 128,
+              "batch_size": 32
+            },
+            "training_time": 27.097373962402344,
+            "memory_used": -0.05859375,
+            "avg_inference_time": 0.004984703063964844,
+            "final_accuracy": 1.0,
+            "throughput": 73.8078901215669,
+            "success": true
+          }
+        ]
+      },
+      "memory_optimization": {
+        "test_data_size": 5000,
+        "batch_sizes": [
+          16,
+          32,
+          64,
+          128,
+          256
+        ],
+        "results": {
+          "batch_16": {
+            "training_memory": 0.0234375,
+            "inference_memory_increase": 0.98828125,
+            "total_memory": 1.01171875,
+            "success": true
+          },
+          "batch_32": {
+            "training_memory": 0.515625,
+            "inference_memory_increase": 0.0,
+            "total_memory": 0.515625,
+            "success": true
+          },
+          "batch_64": {
+            "training_memory": 0.0,
+            "inference_memory_increase": 0.0,
+            "total_memory": 0.0,
+            "success": true
+          },
+          "batch_128": {
+            "training_memory": 0.0,
+            "inference_memory_increase": 0.0,
+            "total_memory": 0.0,
+            "success": true
+          },
+          "batch_256": {
+            "training_memory": 0.0,
+            "inference_memory_increase": 1.296875,
+            "total_memory": 1.296875,
+            "success": true
+          }
+        }
+      },
+      "parallel_processing": {
+        "test_configurations": [],
+        "results": {
+          "size_1000": {
+            "workers_1": {
+              "processing_time": 8.991307258605957,
+              "num_workers": 1,
+              "success": true
+            },
+            "workers_2": {
+              "processing_time": 11.208126544952393,
+              "num_workers": 2,
+              "success": true
+            },
+            "workers_4": {
+              "processing_time": 11.000055313110352,
+              "num_workers": 4,
+              "success": true
+            },
+            "workers_8": {
+              "processing_time": 11.692901134490967,
+              "num_workers": 8,
+              "success": true
+            }
+          },
+          "size_2000": {
+            "workers_1": {
+              "processing_time": 18.5891375541687,
+              "num_workers": 1,
+              "success": true
+            },
+            "workers_2": {
+              "processing_time": 21.10653328895569,
+              "num_workers": 2,
+              "success": true
+            },
+            "workers_4": {
+              "processing_time": 20.90125012397766,
+              "num_workers": 4,
+              "success": true
+            },
+            "workers_8": {
+              "processing_time": 20.89379644393921,
+              "num_workers": 8,
+              "success": true
+            }
+          },
+          "size_4000": {
+            "workers_1": {
+              "processing_time": 35.47583341598511,
+              "num_workers": 1,
+              "success": true
+            },
+            "workers_2": {
+              "processing_time": 39.709126710891724,
+              "num_workers": 2,
+              "success": true
+            },
+            "workers_4": {
+              "processing_time": 39.2979302406311,
+              "num_workers": 4,
+              "success": true
+            },
+            "workers_8": {
+              "processing_time": 41.193548917770386,
+              "num_workers": 8,
+              "success": true
+            }
+          }
+        }
+      }
+    },
+    "compatibility": {
+      "cpu_gpu_compatibility": {
+        "system_info": {
+          "platform": "Linux",
+          "platform_release": "5.10.134-19.1.al8.x86_64",
+          "architecture": "x86_64",
+          "processor": "",
+          "python_version": "3.12.5",
+          "cpu_count": 32,
+          "memory_total": 132648550400,
+          "memory_available": 117521195008,
+          "torch_version": "2.9.1+cu128",
+          "cuda_available": false
+        },
+        "device_tests": {
+          "cpu": {
+            "available": true,
+            "training_time": 14.591601133346558,
+            "inference_accuracy": 1.0,
+            "device": "cpu",
+            "success": true
+          },
+          "gpu": {
+            "available": false
+          }
+        }
+      },
+      "os_compatibility": {
+        "os_info": {
+          "platform": "Linux",
+          "platform_release": "5.10.134-19.1.al8.x86_64",
+          "architecture": "x86_64",
+          "python_version": "3.12.5"
+        },
+        "compatibility_tests": {
+          "file_operations": {
+            "success": false,
+            "error": "cannot access local variable 'os' where it is not associated with a value"
+          },
+          "path_operations": {
+            "success": true,
+            "result": "正常"
+          },
+          "environment_variables": {
+            "success": true,
+            "result": "正常"
+          }
+        }
+      },
+      "dependency_compatibility": {
+        "error": "cannot access local variable 'torch' where it is not associated with a value",
+        "success": false
+      }
+    }
+  },
+  "summary": {
+    "total_tests": 37,
+    "successful_tests": 3,
+    "success_rate": 8.108108108108109,
+    "timestamp": "2025-11-16T03:55:54.744428"
+  }
+}

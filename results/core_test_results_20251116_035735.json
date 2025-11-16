@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-11-16T03:57:35.041560",
+  "test_results": {
+    "basic_functions": {
+      "success": true
+    },
+    "data_processing": {
+      "success": true,
+      "data_size": 500
+    },
+    "model_training": {
+      "success": true,
+      "training_time": 0.7981631755828857,
+      "accuracy": 0.4
+    },
+    "continual_learning": {
+      "success": true,
+      "task1_accuracy": 0.46,
+      "task1_accuracy_after": 0.6866666666666666,
+      "task2_accuracy": 0.6866666666666666,
+      "forgetting_rate": -0.22666666666666663
+    },
+    "memory_usage": {
+      "success": true,
+      "data_memory": 1.265625,
+      "model_memory": 0.0,
+      "total_memory": 5.78125
+    },
+    "system_compatibility": {
+      "success": true,
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.12.5",
+        "cpu_count": 32,
+        "memory_total": 132648550400,
+        "torch_available": true,
+        "cuda_available": false,
+        "numpy_version": "2.3.4"
+      },
+      "dependencies": [
+        "PyTorch 2.9.1+cu128",
+        "NumPy 2.3.4"
+      ],
+      "basic_operations": {
+        "math_operations": true,
+        "array_operations": true,
+        "file_operations": true
+      }
+    }
+  },
+  "summary": {
+    "timestamp": "2025-11-16T03:57:35.041536",
+    "total_tests": 6,
+    "successful_tests": 6,
+    "success_rate": 100.0,
+    "total_time": 1.4982430934906006
+  }
+}

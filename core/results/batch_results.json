@@ -1,0 +1,19 @@
+{
+  "brain_inspired": {
+    "model_name": "brain_inspired",
+    "epochs": 3,
+    "final_loss": 0.0001830758993124526,
+    "final_accuracy": 1.0,
+    "train_losses": [
+      0.5716032556037317,
+      0.0003305032638908223,
+      0.0001830758993124526
+    ],
+    "test_accuracies": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "training_time": 1763253950.0506883
+  }
+}

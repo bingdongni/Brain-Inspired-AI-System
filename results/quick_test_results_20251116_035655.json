@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-11-16T03:55:57.770110",
+  "total_tests": 11,
+  "successful_tests": 8,
+  "test_suites": {
+    "benchmark": {
+      "training_speed": {
+        "training_time": 4.970295667648315,
+        "throughput": 201.19527425883456,
+        "success": true
+      },
+      "inference_speed": {
+        "avg_inference_time": 0.00020374059677124022,
+        "throughput": 245410.09888245276,
+        "success": true
+      },
+      "memory_usage": {
+        "data_memory": 1.39453125,
+        "model_memory": 0.0,
+        "peak_memory": 1.39453125,
+        "success": true
+      }
+    },
+    "continual_learning": {
+      "catastrophic_forgetting": {
+        "task1_accuracy_before": 0.92,
+        "task1_accuracy_after": 0.956,
+        "task2_accuracy": 0.956,
+        "forgetting_rate": -0.03599999999999992,
+        "success": true
+      },
+      "knowledge_transfer": {
+        "source_accuracy": 0.92375,
+        "transfer_accuracy": 0.7133333333333334,
+        "scratch_accuracy": 0.7066666666666667,
+        "transfer_advantage": 0.00666666666666671,
+        "success": true
+      }
+    },
+    "compatibility": {
+      "system_info": {
+        "platform": "Linux",
+        "python_version": "3.12.5",
+        "cpu_count": 32,
+        "memory_total": 132648550400,
+        "torch_available": true,
+        "cuda_available": false,
+        "sklearn_available": true
+      },
+      "dependency_tests": {
+        "basic_functions": {
+          "success": false,
+          "error": "cannot access local variable 'np' where it is not associated with a value"
+        },
+        "numpy": {
+          "success": 

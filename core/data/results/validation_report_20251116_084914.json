@@ -1,0 +1,285 @@
+{
+  "timestamp": "2025-11-16T08:49:14.054919",
+  "total_execution_time": 2.178924560546875,
+  "summary": {
+    "total_tests": 25,
+    "passed_tests": 15,
+    "failed_tests": 10,
+    "success_rate": 0.6,
+    "status": "FAIL"
+  },
+  "category_results": {
+    "dependencies": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "success_rate": 1.0
+    },
+    "initialization": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "success_rate": 1.0
+    },
+    "core_functions": {
+      "total": 4,
+      "passed": 0,
+      "failed": 4,
+      "success_rate": 0.0
+    },
+    "integration": {
+      "total": 2,
+      "passed": 0,
+      "failed": 2,
+      "success_rate": 0.0
+    },
+    "performance": {
+      "total": 4,
+      "passed": 2,
+      "failed": 2,
+      "success_rate": 0.5
+    },
+    "demo_systems": {
+      "total": 9,
+      "passed": 7,
+      "failed": 2,
+      "success_rate": 0.7777777777777778
+    }
+  },
+  "detailed_results": [
+    {
+      "test_name": "python_version_check",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "python_version": "3.12.5",
+        "status": "compatible"
+      }
+    },
+    {
+      "test_name": "os_compatibility_check",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "platform": "linux",
+        "status": "supported"
+      }
+    },
+    {
+      "test_name": "memory_check",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "total_memory_gb": 123.54,
+        "available_memory_gb": 110.37
+      }
+    },
+    {
+      "test_name": "required_dependency_numpy",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "numpy",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "required_dependency_pathlib",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "pathlib",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "optional_dependency_torch",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "torch",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "optional_dependency_sklearn",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "sklearn",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "optional_dependency_matplotlib",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "module": "matplotlib",
+        "status": "available"
+      }
+    },
+    {
+      "test_name": "cli_system_initialization",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "initialization_status": "success",
+        "config_loaded": true
+      }
+    },
+    {
+      "test_name": "config_loading",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "config_keys": [
+          "model",
+          "training",
+          "hippocampus",
+          "neocortex"
+        ],
+        "config_loaded": true
+      }
+    },
+    {
+      "test_name": "directory_structure",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "directory_status": "all_created"
+      }
+    },
+    {
+      "test_name": "data_generation",
+      "success": false,
+      "error_message": "数据生成异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "model_creation",
+      "success": false,
+      "error_message": "模型创建异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "model_training",
+      "success": false,
+      "error_message": "模型训练异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "model_evaluation",
+      "success": false,
+      "error_message": "模型评估异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "complete_workflow",
+      "success": false,
+      "error_message": "工作流异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "data_flow",
+      "success": false,
+      "error_message": "数据流测试异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "training_performance",
+      "success": false,
+      "error_message": "性能测试异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "memory_usage",
+      "success": false,
+      "error_message": "内存使用测试异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "empty_data_handling",
+      "success": false,
+      "error_message": "边界条件测试异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "invalid_input_handling",
+      "success": false,
+      "error_message": "无效输入测试异常: name 'BrainInspiredAISystem' is not defined",
+      "execution_time": 0.0,
+      "details": {}
+    },
+    {
+      "test_name": "memory_learning_demo",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "demo_importable": true,
+        "demo_callable": true,
+        "demo_test_completed": true
+      }
+    },
+    {
+      "test_name": "lifelong_learning_demo",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "demo_importable": true,
+        "demo_callable": true
+      }
+    },
+    {
+      "test_name": "dynamic_routing_demo",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "demo_importable": true,
+        "demo_callable": true
+      }
+    },
+    {
+      "test_name": "benchmark_script",
+      "success": true,
+      "error_message": "",
+      "execution_time": 0.0,
+      "details": {
+        "benchmark_creatable": true,
+        "system_info_collected": true
+      }
+    }
+  ],
+  "system_info": {
+    "python_version": "3.12.5 (main, Sep  5 2024, 00:16:34) [GCC 12.2.0]",
+    "platform": "linux",
+    "execution_path": "/workspace/brain-inspired-ai"
+  },
+  "recommendations": [
+    "系统存在一些问题，建议优化",
+    "关键功能测试未完全通过，系统可能无法正常工作"
+  ]
+}

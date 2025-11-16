@@ -1,0 +1,211 @@
+site_name: Brain-Inspired AI Documentation
+site_description: Advanced Deep Learning Framework Based on Brain Neural Mechanisms
+site_author: Brain AI Team
+site_url: https://brain-ai-docs.org
+
+# Repository information
+repo_name: your-repo/brain-inspired-ai
+repo_url: https://github.com/your-repo/brain-inspired-ai
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2024 Brain AI Team
+
+# Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+# Features
+features:
+  - navigation.top
+  - navigation.sections
+  - navigation.expand
+  - navigation.indexes
+  - toc.follow
+  - content.code.copy
+  - content.code.annotate
+  - content.tabs.link
+  - content.tooltips
+  - header.autohide
+  - search.highlight
+  - search.share
+  - search.suggest
+  - search.sharing
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\\)|\.(?!py$|\.(?!py$|\.(?!py$|\.))+'
+  - minify:
+      minify_html: true
+  - macros:
+      include_dir: docs/macros
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - git-authors:
+      show_contribution: true
+      show_line_count: true
+  - awesome-pages
+  - redirects:
+      redirect_maps:
+        'getting-started.md': 'user-guide/quickstart.md'
+        'api.md': 'reference/api.md'
+        'examples.md': 'examples/index.md'
+        'tutorials.md': 'tutorials/index.md'
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: facelessuser
+      repo: pymdown-extensions
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-repo
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/brain_ai
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/brain-ai
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            <a href="https://github.com/your-repo/brain-inspired-ai/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">telling us what you found helpful or what could be improved</a>.
+ 茶的版本历史:
+    - type: major
+      name: Major version
+      note: >-
+        Major version releases may contain breaking changes that could require
+        code modifications.
+    - type: minor
+      name: Minor version
+      note: >-
+        Minor version releases may contain backward compatible changes that could
+        require documentation updates.
+    - type: patch
+      name: Patch version
+      note: >-
+        Patch version releases only contain bug fixes and should not require any
+        code modifications.
+
+# Page tree
+nav:
+  - Home: index.md
+  - Quick Start:
+      - Installation: getting-started/installation.md
+      - First Steps: getting-started/first-steps.md
+      - Configuration: getting-started/configuration.md
+  - User Guide:
+      - Architecture Overview: user-guide/architecture.md
+      - Memory Systems: user-guide/memory-systems.md
+      - Continual Learning: user-guide/continual-learning.md
+      - Attention Mechanisms: user-guide/attention.md
+      - Dynamic Routing: user-guide/dynamic-routing.md
+  - Tutorials:
+      - Basic Memory Demo: tutorials/basic-memory.md
+      - Continual Learning: tutorials/continual-learning.md
+      - Building Custom Models: tutorials/custom-models.md
+      - Performance Optimization: tutorials/optimization.md
+  - Examples:
+      - Memory Learning: examples/memory-learning.md
+      - Lifelong Learning: examples/lifelong-learning.md
+      - Dynamic Routing: examples/dynamic-routing.md
+      - Advanced Demos: examples/advanced.md
+  - API Reference:
+      - Core Modules: reference/core.md
+      - Memory Interface: reference/memory.md
+      - Continual Learning: reference/continual-learning.md
+      - Attention: reference/attention.md
+      - Utils: reference/utils.md
+  - Development:
+      - Contributing: development/contributing.md
+      - Setup: development/setup.md
+      - Testing: development/testing.md
+      - API Development: development/api.md
+  - Resources:
+      - Research Papers: resources/papers.md
+      - Benchmarks: resources/benchmarks.md
+      - FAQ: resources/faq.md
+      - Changelog: changelog.md

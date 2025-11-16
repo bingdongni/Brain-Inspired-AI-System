@@ -1,0 +1,61 @@
+{
+  "benchmark_results": {
+    "training_speed": {
+      "config": {
+        "model_types": [
+          "brain_inspired",
+          "standard"
+        ],
+        "dataset_sizes": [
+          500,
+          1000,
+          2000
+        ],
+        "epochs": 10,
+        "device": "cpu"
+      },
+      "results": {
+        "brain_inspired": {
+          "size_500": {
+            "training_time": 13.937867879867554,
+            "memory_used": 129.16796875,
+            "samples_per_second": 35.87349258219194,
+            "success": true
+          },
+          "size_1000": {
+            "training_time": 28.659491539001465,
+            "memory_used": 0.08984375,
+            "samples_per_second": 34.892454342364836,
+            "success": true
+          },
+          "size_2000": {
+            "training_time": 54.573747396469116,
+            "memory_used": 9.98828125,
+            "samples_per_second": 36.64765744361177,
+            "success": true
+          }
+        },
+        "standard": {
+          "size_500": {
+            "training_time": 5.190043926239014,
+            "memory_used": -0.01171875,
+            "samples_per_second": 96.33829830845517,
+            "success": true
+          },
+          "size_1000": {
+            "training_time": 10.03653597831726,
+            "memory_used": -0.12109375,
+            "samples_per_second": 99.6359702351868,
+            "success": true
+          },
+          "size_2000": {
+            "training_time": 24.292001485824585,
+            "memory_used": -0.06640625,
+            "samples_per_second": 82.33162677711366,
+            "success": true
+          }
+        }
+      }
+    }
+  }
+}

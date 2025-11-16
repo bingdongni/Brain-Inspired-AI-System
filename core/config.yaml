@@ -1,0 +1,454 @@
+# 脑启发AI配置文件
+# Brain-Inspired AI Configuration
+
+# 项目基础信息
+project:
+  name: "Brain-Inspired AI"
+  version: "1.0.0"
+  description: "基于生物大脑启发的深度学习框架"
+  random_seed: 42
+  debug: false
+
+# 数据配置
+data:
+  dataset_path: "./data/datasets"
+  batch_size: 32
+  num_workers: 4
+  pin_memory: true
+  shuffle: true
+  validation_split: 0.2
+  test_split: 0.1
+  max_sequence_length: 512
+  image_size: [224, 224]
+  channels: 3
+  
+  # 数据预处理
+  preprocessing:
+    normalize: true
+    normalize_mean: [0.485, 0.456, 0.406]
+    normalize_std: [0.229, 0.224, 0.225]
+    augmentation: true
+    augmentation_prob: 0.5
+    
+    # 数据增强策略
+    augmentations:
+      horizontal_flip: true
+      vertical_flip: false
+      rotation_range: 15
+      width_shift_range: 0.1
+      height_shift_range: 0.1
+      shear_range: 0.1
+      zoom_range: 0.1
+      brightness_range: 0.1
+      contrast_range: 0.1
+
+# 模型架构配置
+model:
+  name: "BrainInspiredNet"
+  type: "hybrid"  # hybrid, hippocampus_only, neocortex_only
+  
+  # 基础网络参数
+  input_dim: 784
+  hidden_dim: 512
+  output_dim: 10
+  num_layers: 6
+  
+  # 激活函数
+  activation: "relu"
+  activation_kwargs:
+    negative_slope: 0.01
+    
+  # 正则化
+  dropout: 0.2
+  batch_norm: true
+  layer_norm: false
+  
+  # 初始化策略
+  weight_init: "xavier_uniform"
+  bias_init: "zeros"
+
+# 海马体配置 (Hippocampus Configuration)
+hippocampus:
+  enabled: true
+  
+  # 记忆容量和结构
+  memory_capacity: 10000
+  embedding_dim: 256
+  encoding_dimension: 128
+  
+  # 记忆编码参数
+  encoding:
+    strength_threshold: 0.7
+    consolidation_threshold: 0.8
+    forgetting_rate: 0.01
+    pattern_separation: true
+    pattern_separation_factor: 0.1
+    
+  # 检索机制
+  retrieval:
+    threshold: 0.6
+    max_retrieval_steps: 10
+    attention_weights: true
+    similarity_metric: "cosine"  # cosine, euclidean, dot_product
+    
+  # 记忆细胞参数
+  memory_cells:
+    num_cells: 512
+    cell_capacity: 100
+    activation_threshold: 0.5
+    refractory_period: 3
+    
+  # 模式分离和完成
+  pattern_separation:
+    enabled: true
+    separation_layers: 3
+    separation_factor: 0.2
+    noise_injection: 0.01
+    
+  pattern_completion:
+    enabled: true
+    completion_threshold: 0.7
+    iterative_completion: true
+    max_iterations: 5
+
+# 新皮层配置 (Neocortex Configuration)
+neocortex:
+  enabled: true
+  
+  # 层次结构
+  layers: 8
+  abstraction_levels: 4
+  feature_channels: 512
+  
+  # 层次化抽象参数
+  hierarchical:
+    num_levels: 4
+    level_dims: [256, 512, 1024, 2048]
+    abstraction_rate: 0.8
+    lateral_connections: true
+    
+  # 处理模块
+  processing_modules:
+    v1:  # 视觉皮层V1
+      kernel_size: 3
+      channels: 64
+      activation: "relu"
+    v2:  # 视觉皮层V2  
+      kernel_size: 3
+      channels: 128
+      activation: "relu"
+    it:  # 下颞叶皮层
+      kernel_size: 3
+      channels: 256
+      activation: "relu"
+      
+  # 抽象和表示学习
+  abstraction:
+    feature_extraction: true
+    attention_based: true
+    multi_scale_features: true
+    temporal_aggregation: true
+    
+  # 层次间信息传递
+  information_flow:
+    bottom_up: true
+    top_down: true
+    lateral: true
+    feedback_strength: 0.5
+
+# 动态路由配置 (Dynamic Routing Configuration)
+dynamic_routing:
+  enabled: true
+  
+  # 路由网络参数
+  routing_iterations: 3
+  num_routing_iterations: 3
+  
+  # 自适应分配
+  adaptive_allocation:
+    enabled: true
+    allocation_strategy: "attention"  # attention, capacity, importance
+    allocation_window: 10
+    learning_rate: 0.01
+    
+  # 强化路由
+  reinforcement_routing:
+    enabled: true
+    reward_function: "accuracy"  # accuracy, loss, f1_score
+    exploration_rate: 0.1
+    experience_replay: true
+    replay_buffer_size: 10000
+    
+  # 效率优化
+  efficiency_optimization:
+    pruning_threshold: 0.01
+    quantization_bits: 8
+    compression_ratio: 0.7
+    sparse_training: true
+
+# 持续学习配置 (Continual Learning Configuration)
+lifelong_learning:
+  enabled: true
+  
+  # 动态扩展
+  dynamic_expansion:
+    enabled: true
+    expansion_threshold: 0.05
+    max_capacity: 50000
+    growth_rate: 1.2
+    
+  # 弹性权重整合 (EWC)
+  elastic_weight_consolidation:
+    enabled: true
+    lambda_ewc: 1000.0
+    fisher_update_frequency: 100
+    online_fisher: true
+    
+  # 生成重放
+  generative_replay:
+    enabled: true
+    generator_model: "conditional_gan"
+    replay_sample_size: 1000
+    diversity_weight: 0.1
+    
+  # 知识转移
+  knowledge_transfer:
+    enabled: true
+    transfer_strategy: "progressive"  # progressive, incremental, parallel
+    teacher_student_ratio: 0.3
+    distillation_temperature: 3.0
+    
+  # 内存管理
+  memory_management:
+    strategy: "reservoir"  # reservoir, ring_buffer, importance_sampling
+    buffer_size: 5000
+    replacement_strategy: "fifo"  # fifo, random, importance
+
+# 注意力机制配置 (Attention Mechanism Configuration)
+memory_interface:
+  attention:
+    enabled: true
+    
+    # 多头注意力
+    multi_head:
+      num_heads: 8
+      head_dim: 64
+      dropout: 0.1
+      
+    # 注意力类型
+    attention_types:
+      self_attention: true
+      cross_attention: true
+      spatial_attention: false
+      channel_attention: true
+      
+    # 注意力权重
+    attention_weights:
+      temperature: 1.0
+      learnable_temperature: false
+      sparsity: 0.0
+      
+  # 通信机制
+  communication:
+    enabled: true
+    communication_channels: 16
+    bandwidth_constraint: true
+    noise_level: 0.01
+    
+  # 整合机制
+  consolidation:
+    enabled: true
+    consolidation_method: "soft"  # soft, hard, adaptive
+    consolidation_rate: 0.1
+    interference_threshold: 0.8
+
+# 训练配置 (Training Configuration)
+training:
+  # 优化器参数
+  optimizer: "adamw"  # sgd, adam, adamw, rmsprop
+  learning_rate: 0.001
+  weight_decay: 0.01
+  
+  # 学习率调度
+  scheduler:
+    type: "cosine_annealing"  # step, cosine_annealing, one_cycle, plateau
+    warmup_steps: 1000
+    min_lr: 1e-6
+    
+  # 批次和轮次
+  epochs: 100
+  early_stopping:
+    enabled: true
+    patience: 10
+    min_delta: 0.001
+    
+  # 梯度裁剪
+  gradient_clipping:
+    enabled: true
+    max_norm: 1.0
+    
+  # 混合精度训练
+  mixed_precision:
+    enabled: true
+    loss_scale: "dynamic"
+    
+  # 分布式训练
+  distributed:
+    enabled: false
+    backend: "nccl"
+    world_size: 1
+    rank: 0
+
+# 损失函数配置 (Loss Function Configuration)
+loss:
+  # 主要损失
+  primary: "cross_entropy"  # cross_entropy, mse, huber, focal
+  
+  # 海马体相关损失
+  hippocampus_loss:
+    memory_consolidation: 0.1
+    pattern_separation: 0.05
+    retrieval_accuracy: 0.2
+    
+  # 新皮层相关损失
+  neocortex_loss:
+    abstraction_consistency: 0.1
+    hierarchical_smoothness: 0.05
+    feature_reconstruction: 0.15
+    
+  # 持续学习损失
+  continual_loss:
+    catastrophic_forgetting: 0.5
+    knowledge_distillation: 0.3
+    task_alignment: 0.2
+    
+  # 正则化损失
+  regularization:
+    l1_lambda: 0.001
+    l2_lambda: 0.01
+    dropout_regularization: 0.1
+
+# 评估配置 (Evaluation Configuration)
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "auc_roc"
+    
+  # 评估频率
+  evaluation_frequency: 5
+  save_best_model: true
+  
+  # 持续学习评估
+  continual_evaluation:
+    evaluate_all_tasks: true
+    measure_forgetting: true
+    measure_learning: true
+    
+  # 生成报告
+  report:
+    generate_plots: true
+    save_confusion_matrix: true
+    plot_learning_curves: true
+    save_attention_maps: false
+
+# 日志和监控配置 (Logging and Monitoring Configuration)
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+  # 文件日志
+  file_logging:
+    enabled: true
+    log_file: "logs/training.log"
+    max_file_size: "100MB"
+    backup_count: 5
+    
+  # TensorBoard
+  tensorboard:
+    enabled: true
+    log_dir: "logs/tensorboard"
+    flush_secs: 30
+    
+  # Weights & Biases
+  wandb:
+    enabled: false
+    project_name: "brain-inspired-ai"
+    entity: "brain-ai-team"
+    
+  # MLflow
+  mlflow:
+    enabled: false
+    tracking_uri: "http://localhost:5000"
+    experiment_name: "brain_ai_experiment"
+
+# 系统配置 (System Configuration)
+system:
+  # 设备配置
+  device: "auto"  # auto, cpu, cuda, mps
+  gpu_ids: [0]
+  use_mixed_precision: true
+  
+  # 内存管理
+  memory:
+    max_memory_fraction: 0.8
+    allow_growth: true
+    
+  # 并行处理
+  parallel:
+    num_threads: 8
+    inter_op_threads: 2
+    intra_op_threads: 6
+    
+  # 缓存配置
+  cache:
+    enable_cache: true
+    cache_size: "1GB"
+    cache_type: "disk"  # memory, disk, redis
+
+# 高级配置 (Advanced Configuration)
+advanced:
+  # 神经形态计算支持
+  neuromorphic:
+    enabled: false
+    spike_encoding: false
+    event_driven: false
+    
+  # 生物仿真参数
+  biological_simulation:
+    time_constant: 10.0
+    refractory_period: 2.0
+    synaptic_plasticity: true
+    
+  # 元学习配置
+  meta_learning:
+    enabled: false
+    meta_lr: 0.01
+    adaptation_steps: 5
+    
+  # 多模态融合
+  multimodal:
+    enabled: false
+    fusion_strategy: "attention"  # attention, concatenation, bilinear
+
+# 实验特定配置 (Experiment-Specific Configuration)
+experiments:
+  # 记忆实验
+  memory_experiment:
+    num_memory_trials: 1000
+    memory_load: 0.8
+    interference_level: 0.3
+    
+  # 学习实验
+  learning_experiment:
+    curriculum_learning: true
+    progressive_difficulty: true
+    knowledge_distillation: true
+    
+  # 泛化实验
+  generalization_experiment:
+    domain_adaptation: true
+    few_shot_learning: true
+    zero_shot_learning: false
